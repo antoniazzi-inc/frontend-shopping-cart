@@ -1,0 +1,26 @@
+.mt-4 {
+    margin-top: 2em!important;
+}
+
+.mt-2 {
+    margin-top: 1em!important;
+}
+.pt-2 {
+    padding-top: 1em!important;
+}
+.ml-2 {
+    margin-left: 1em!important;
+}
+.pay_h1{
+    font-weight: 500!important;
+    font-size: 22px;
+    margin-top: 0!important;
+    color: #202020!important;
+}
+.pi {
+    width: 59px;
+    height: 54px;
+    max-width: 59px;
+    max-height: 54px;
+    cursor: pointer;
+}
