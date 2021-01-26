@@ -22,42 +22,42 @@
       <div class="col-md-9">
         <div class="row">
           <div class="col-md-12 text-left">
-            <h1 class="title">Shoppingcart zelf inrichten</h1>
+            <h1 class="title">{{$t('labels.selfCheckout')}}</h1>
           </div>
         </div>
         <form onsubmit="">
           <div class="row">
             <div class="col-md-12 text-left">
-              <h2 class="title mt-4">My Details</h2>
+              <h2 class="title mt-4">{{$t('labels.myDetails')}}</h2>
             </div>
           </div>
           <div class="row  mt-4">
             <div class="form-group">
               <div class="col-md-4 text-left pt-2">
-                <input type="text" class="form-control mx-auto" placeholder="first Name" v-model="user.firstName">
+                <input type="text" class="form-control mx-auto" :placeholder="$t('labels.firstName')" v-model="user.firstName">
               </div>
               <div class="col-md-4 text-left pt-2">
-                <input type="text" class="form-control mx-auto" placeholder="middle Name" v-model="user.middleName">
+                <input type="text" class="form-control mx-auto" :placeholder="$t('labels.middleName')" v-model="user.middleName">
               </div>
               <div class="col-md-4 text-left pt-2">
-                <input type="text" class="form-control mx-auto" placeholder="last Name *" v-model="user.lastName">
+                <input type="text" class="form-control mx-auto" :placeholder="$t('labels.lastName')" v-model="user.lastName">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="form-group">
               <div class="col-md-12 text-left pt-2">
-                <input type="email" class="form-control m-t-20" placeholder="email *" v-model="user.email">
+                <input type="email" class="form-control m-t-20" :placeholder="$t('labels.email')" v-model="user.email">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="form-group">
               <div class="col-md-9 text-left pt-2">
-                <input type="email" class="form-control m-t-20" placeholder="street *" v-model="user.address.street">
+                <input type="email" class="form-control m-t-20" :placeholder="$t('labels.street')" v-model="user.address.street">
               </div>
               <div class="col-md-3 text-left pt-2">
-                <input type="email" class="form-control m-t-20" placeholder="house number *"
+                <input type="email" class="form-control m-t-20" :placeholder="$t('labels.number')"
                        v-model="user.address.number">
               </div>
             </div>
@@ -65,11 +65,11 @@
           <div class="row">
             <div class="form-group">
               <div class="col-md-4 text-left pt-2">
-                <input type="email" class="form-control m-t-20" placeholder="postal code *"
+                <input type="email" class="form-control m-t-20" :placeholder="$t('labels.postCode')"
                        v-model="user.address.postcode">
               </div>
               <div class="col-md-8 text-left pt-2">
-                <input type="email" class="form-control m-t-20" placeholder="city *" v-model="user.address.city">
+                <input type="email" class="form-control m-t-20" :placeholder="$t('labels.city')" v-model="user.address.city">
               </div>
             </div>
           </div>
@@ -91,12 +91,12 @@
           </div>
           <div class="row mt-4">
             <div class="col-md-12 text-left">
-              <h1 class="pay_h1">Choose Payment Method</h1>
+              <h1 class="pay_h1">{{ $t('labels.paymentMethod') }}</h1>
             </div>
           </div>
           <div class="row mt-4">
             <div class="col-md-12 text-left">
-              <p>How would you like to pay? The chosen payment method is <b>{{ selectedPayment }}</b></p>
+              <p>{{ $t('labels.howToPay') }} <b>{{ selectedPayment }}</b></p>
             </div>
           </div>
           <div class="row mt-4">
@@ -115,7 +115,7 @@
           </div>
           <div class="row mt-4">
             <div class="col-md-12 text-left">
-              <h1>Shopping cart</h1>
+              <h1>{{ $t('labels.shoppingCart') }}</h1>
             </div>
           </div>
           <div class="paymentBox">

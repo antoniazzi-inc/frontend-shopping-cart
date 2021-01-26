@@ -38,17 +38,20 @@ export default class HomeComponent extends Vue {
   public mounted () {
     this.divEl = document.getElementById('arcomplete')
     this.productId = this.divEl?.dataset.productid
+    let lang = 'en'
+    if (this.divEl && this.divEl.dataset && this.divEl.dataset.locale) {
+      lang = this.divEl.dataset.locale
+    }
+    this.$i18n.locale = lang
     if (this.productId !== null) {
       this.getProduct()
     }
   }
 
   public getProduct () {
+    // @ts-ignore
     this.productService.get(this.productId).then((resp: AxiosResponse) => {
-      if (resp) {
-        debugger
-        this.productPrice = 0
-      }
+      if (resp) {}
     })
   }
 }

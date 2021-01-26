@@ -1,0 +1,16 @@
+{
+  "myDetails": "My Details",
+  "selfCheckout": "Self Checkout",
+  "firstName": "first Name",
+  "middleName": "Middle Name",
+  "lastName": "Last Name *",
+  "street": "street *",
+  "number": "house number *",
+  "city": "city *",
+  "company": "company",
+  "postCode": "Post Code",
+  "email": "email",
+  "paymentMethod": "Choose Payment Method",
+  "howToPay": "How would you like to pay? The chosen payment method is",
+  "shoppingCart": "Shopping cart"
+}

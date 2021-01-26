@@ -1,0 +1,16 @@
+{
+  "myDetails": "Mijn details",
+  "selfCheckout": "Shoppingcart zelf inrichten",
+  "firstName": "Voornaam",
+  "middleName": "Midden naam",
+  "lastName": "Achternaam *",
+  "street": "straat *",
+  "number": "huisnummer *",
+  "city": "Woonplaats *",
+  "company": "bedrijf *",
+  "postCode": "Post Code",
+  "email": "email",
+  "paymentMethod": "Kies betalingsmethode",
+  "howToPay": "Hoe zou u willen betalen? De gekozen betaalmethode is",
+  "shoppingCart": "Winkelwagen"
+}
