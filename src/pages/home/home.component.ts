@@ -2,6 +2,8 @@ import { Component, Vue } from 'vue-property-decorator'
 import { UserModel } from '@/shared/models/user.model'
 import { UserAddressModel } from '@/shared/models/userAddress.model'
 import Multiselect from 'vue-multiselect'
+import ProductService from '@/shared/services/productService'
+import { AxiosResponse } from 'axios'
 
 @Component({
   components: {
@@ -9,17 +11,21 @@ import Multiselect from 'vue-multiselect'
   }
 })
 export default class HomeComponent extends Vue {
-  public productId: number | null
+  public productId: any
   public productPrice: number | null
   public user: UserModel
   public selectedPayment: string
   public totalPrice: number
   public totalExclPrice: number
   public totalTax: number
+  public productService: any
+  public divEl: HTMLElement | null
 
   constructor () {
     super()
     this.productId = null
+    this.divEl = null
+    this.productService = ProductService.getInstance()
     this.productPrice = null
     this.totalPrice = 39.00
     this.totalExclPrice = 47.19
@@ -27,5 +33,22 @@ export default class HomeComponent extends Vue {
     this.selectedPayment = 'iDeal'
     this.user = new UserModel(undefined, undefined, undefined, undefined, undefined,
       new UserAddressModel())
+  }
+
+  public mounted () {
+    this.divEl = document.getElementById('arcomplete')
+    this.productId = this.divEl?.dataset.productid
+    if (this.productId !== null) {
+      this.getProduct()
+    }
+  }
+
+  public getProduct () {
+    this.productService.get(this.productId).then((resp: AxiosResponse) => {
+      if (resp) {
+        debugger
+        this.productPrice = 0
+      }
+    })
   }
 }

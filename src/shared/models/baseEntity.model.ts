@@ -1,11 +1,11 @@
 import { User } from '@/shared/models/user.model'
 
-export interface BaseEntity {
+export interface IBaseEntity {
   id?: number|undefined;
   administrationId?: number|undefined;
 }
 
-export class BaseEntityModel implements BaseEntity {
+export class BaseEntityModel implements IBaseEntity {
   constructor (
     public id?: number|undefined,
     public administrationId?: number|undefined

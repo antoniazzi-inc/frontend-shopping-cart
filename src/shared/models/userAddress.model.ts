@@ -1,7 +1,7 @@
-import { BaseEntity } from '@/shared/models/baseEntity.model'
+import { IBaseEntity } from '@/shared/models/baseEntity.model'
 import { Country } from '@/shared/models/country.model'
 
-export interface UserAddress extends BaseEntity {
+export interface UserAddress extends IBaseEntity {
   street?: string;
   number?: number;
   postcode?: string;
