@@ -124,7 +124,7 @@
                 <span>Shopping cart</span>
               </div>
               <div class="col-md-5 text-left">
-                <span>{{ $store.state.currency }}{{ totalExclPrice }}</span>
+                <span>{{ $store.state.currency }}{{ product.price }}</span>
               </div>
             </div>
             <div class="row">
@@ -135,18 +135,18 @@
             <div class="row itemCol">
               <div class="col-md-7 text-left">
                 <h3>Total</h3>
-                <h4>totaal excl {{ $store.state.currency }}{{ totalTax }} btw</h4>
+                <h4>totaal excl {{ $store.state.currency }}{{ getTotalTax() }} btw</h4>
               </div>
               <div class="col-md-5 text-left">
-                <h3>{{ $store.state.currency }}{{ totalPrice }}</h3>
-                <h4>{{ $store.state.currency }}{{ totalExclPrice }}</h4>
+                <h3>{{ $store.state.currency }}{{ getProductTotalPrice() }}</h3>
+                <h4>{{ $store.state.currency }}{{ product.price }}</h4>
               </div>
             </div>
             <div class="row mt-2">
               <div class="col-md-12">
                 <button data-v-5041d56c="" class="btn btn-primary btn-pay">Pay</button>
               </div>
-              <div class="col-md-12 text-left">
+              <div class="col-md-12 text-left m-2">
                 <span class="secure_payment">Payments always go through a secure connection</span>
               </div>
             </div>

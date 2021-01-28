@@ -11,6 +11,9 @@
 .ml-2 {
     margin-left: 1em!important;
 }
+.m-2 {
+    margin: 1em!important;
+}
 .pay_h1{
     font-weight: 500!important;
     font-size: 22px;

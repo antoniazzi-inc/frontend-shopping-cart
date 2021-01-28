@@ -4,6 +4,7 @@ import { UserAddressModel } from '@/shared/models/userAddress.model'
 import Multiselect from 'vue-multiselect'
 import ProductService from '@/shared/services/productService'
 import { AxiosResponse } from 'axios'
+import { IProduct, Product } from '@/shared/models/productms/ProductModel'
 
 @Component({
   components: {
@@ -13,10 +14,9 @@ import { AxiosResponse } from 'axios'
 export default class HomeComponent extends Vue {
   public productId: any
   public productPrice: number | null
+  public product: IProduct
   public user: UserModel
   public selectedPayment: string
-  public totalPrice: number
-  public totalExclPrice: number
   public totalTax: number
   public productService: any
   public divEl: HTMLElement | null
@@ -25,10 +25,9 @@ export default class HomeComponent extends Vue {
     super()
     this.productId = null
     this.divEl = null
+    this.product = new Product()
     this.productService = ProductService.getInstance()
     this.productPrice = null
-    this.totalPrice = 39.00
-    this.totalExclPrice = 47.19
     this.totalTax = 8.19
     this.selectedPayment = 'iDeal'
     this.user = new UserModel(undefined, undefined, undefined, undefined, undefined,
@@ -51,7 +50,25 @@ export default class HomeComponent extends Vue {
   public getProduct () {
     // @ts-ignore
     this.productService.get(this.productId).then((resp: AxiosResponse) => {
-      if (resp) {}
+      if (resp && resp.data) {
+        this.product = resp.data
+      }
     })
+  }
+
+  public getProductTotalPrice () {
+    if (this.product && this.product.price && this.product.tax) {
+      return (this.product.price + ((this.product.price / 100) * this.product.tax)).toFixed(3)
+    } else {
+      return 0
+    }
+  }
+
+  public getTotalTax () {
+    if (this.product && this.product.price && this.product.tax) {
+      return ((this.product.price / 100) * this.product.tax).toFixed(3)
+    } else {
+      return 0
+    }
   }
 }
