@@ -1,6 +1,8 @@
 import { IBaseEntity } from '@/shared/models/baseEntity.model'
 import { Country } from '@/shared/models/country.model'
-
+export enum AddressType {
+  OTHER= 'OTHER'
+}
 export interface UserAddress extends IBaseEntity {
   street?: string;
   number?: number;
