@@ -20,6 +20,7 @@ import { EventBus } from '@/shared/eventBus'
 import { IRelationEntity, RelationEntity } from '@/shared/models/relationms/relationModel'
 import { RelationProfile } from '@/shared/models/relationms/relation-profile.model'
 import { IRelationAddress, RelationAddress } from '@/shared/models/relationms/relation-address.model'
+import { Role } from '@/shared/models/role.model'
 
 @Component({
   components: {
@@ -91,8 +92,7 @@ export default class HomeComponent extends Vue {
     this.user = new RelationEntity(undefined, undefined, undefined, undefined, undefined,
       undefined, undefined, undefined, undefined, undefined, undefined, undefined,
       undefined, undefined, undefined, undefined, new RelationProfile(), undefined, undefined, undefined,
-      [new RelationAddress()], undefined, undefined, undefined, undefined, undefined, undefined, undefined,
-      undefined, undefined)
+      [new RelationAddress()], undefined, undefined, undefined, undefined, undefined, undefined, [{ id: 2, version: 0 }], undefined, undefined)
   }
 
   public created () {

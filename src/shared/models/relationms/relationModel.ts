@@ -80,5 +80,6 @@ export class RelationEntity implements IRelationEntity {
     public relationGroups?: IRelationGroup[],
     public authorities?: IGrantedAuthority[]
   ) {
+    this.enabled = this.enabled ? this.enabled : true
   }
 }

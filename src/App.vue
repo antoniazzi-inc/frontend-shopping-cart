@@ -1,5 +1,5 @@
 <template>
-  <div id="arcomplete" data-locale="nl" data-productid="7">
+  <div id="arcomplete" data-locale="nl" data-productid="6">
     <router-view/>
   </div>
 </template>
